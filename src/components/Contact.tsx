@@ -10,7 +10,7 @@ const Contact = () => {
   const [location, setLocation] = useState('');
 
   return (
-    <section id="contact" className="section bg-slate-50 min-h-[60vh] my-8 py-20 px-6"> {/* Added px-6 for mobile breathing room */}
+    <section id="contact" className="z-10 relative section bg-slate-50 min-h-[60vh] my-8 py-20 px-6"> {/* Added px-6 for mobile breathing room */}
       <motion.h1 
         className="title"
         initial={{ opacity: 0, y: -20 }}

@@ -18,7 +18,7 @@ const About = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Decorative Orange Background Shape */}
-          <div className="absolute -left-20 w-100 h-100 bg-primary rounded-full -z-10 opacity-90 hidden lg:block" 
+          <div className="absolute pointer-events-none select-none -left-20 w-100 h-100 bg-primary rounded-full -z-10 opacity-90 hidden lg:block" 
                style={{ backgroundColor: '#F9A01B' }} />
           
           <img 

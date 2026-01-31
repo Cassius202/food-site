@@ -39,24 +39,25 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Healthy swither chefs do all the prep work, like peeling, chopping
-            and marinating, so you can eat a proper meal
+           Healthy eating made easy. Our chefs take care of the tedious prep work like chopping and marinating, leaving you with nothing to do but enjoy a proper meal.
           </motion.p>
 
           <motion.button
-            className="lg:bg-primary bg-stone-950 text-white flex items-center gap-2 px-4 mt-4 lg:mt-8 py-2 cursor-pointer"
+            className="lg:bg-primary bg-stone-950 text-white flex items-center gap-2 px-4 mt-4 lg:mt-8 py-2 cursor-pointer max-sm:mb-15"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             whileTap={{ scale: 0.95 }}
           >
-            Order now <ArrowRight />
+            <a href="#contact" className="flex gap-1">
+              Order now <ArrowRight />
+            </a>
           </motion.button>
         </motion.div>
 
         {/* Image - Fly in from right */}
         <motion.div
-          className="dishImage w-full max-lg:px-20 lg:px-2 lg:scale-125 scale-110 max-lg:-translate-y-2 select-none pointer-events-auto"
+          className="dishImage w-full max-lg:px-20 lg:px-2 lg:scale-125 scale-110 max-sm:scale-150 max-sm:-translate-x-4 max-lg:-translate-y-2 select-none pointer-events-auto"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
