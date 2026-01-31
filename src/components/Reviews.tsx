@@ -4,35 +4,40 @@ import ReviewCard from "../minor-components/ReviewCard";
 import { cn } from "../utils/cn";
 import { useEffect, useRef, useState } from "react";
 
+const isTouchDevice = typeof window !== 'undefined' 
+  ? ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+  : false;
+
 const Reviews = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+
   // Handle scroll for touch devices (simple scroll)
+
   useEffect(() => {
     if (!sliderRef.current || !isTouchDevice) return;
-    
+
     const minWidth = sliderRef.current.clientWidth;
-    
+
     sliderRef.current.scrollTo({
       left: currentIndex * minWidth,
       behavior: "smooth",
     });
-  }, [currentIndex, isTouchDevice]);
+  }, [currentIndex]);
 
   const handleSlide = (direction: "left" | "right"): void => {
     if (!sliderRef.current) return;
 
-    if (direction === 'left') {
-      setCurrentIndex(prev => {
+    if (direction === "left") {
+      setCurrentIndex((prev) => {
         if (prev === 0) {
           return reviews.length - 1;
         } else {
           return prev - 1;
         }
       });
-    } else if (direction === 'right') {
-      setCurrentIndex(prev => (prev + 1) % reviews.length);
+    } else if (direction === "right") {
+      setCurrentIndex((prev) => (prev + 1) % reviews.length);
     }
   };
 
@@ -51,13 +56,18 @@ const Reviews = () => {
         A lot of people have good things to say about our quality and service
       </p>
 
-      <div className={cn("slider-container relative w-screen px-2 border-y border-slate-300 h-60 my-10", isTouchDevice && "mb-4")}>
-        <div 
+      <div
+        className={cn(
+          "slider-container relative w-screen px-2 border-y border-slate-300 h-60 my-10",
+          isTouchDevice && "mb-4",
+        )}
+      >
+        <div
           className={cn(
             "h-full flex",
-            isTouchDevice 
+            isTouchDevice
               ? "w-full max-w-4xl overflow-x-scroll [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden scroll-smooth"
-              : "slider w-max"
+              : "slider w-max",
           )}
           ref={sliderRef}
         >
@@ -66,23 +76,24 @@ const Reviews = () => {
               key={index}
               className={cn(
                 "h-full ml-2 basis-90 shrink-0 p-1.5 px-1",
-                isTouchDevice && "px-10 basis-full"
+                isTouchDevice && "px-10 basis-full",
               )}
             >
               <ReviewCard review={review} />
             </div>
           ))}
-          
+
           {/* Duplicate cards for infinite scroll on NON-touch devices */}
-          {!isTouchDevice && reviews.map((review, index) => (
-            <div
-              aria-hidden
-              key={`duplicate-${index}`}
-              className="h-full ml-2 basis-90 shrink-0 p-1.5 px-1"
-            >
-              <ReviewCard review={review} />
-            </div>
-          ))}
+          {!isTouchDevice &&
+            reviews.map((review, index) => (
+              <div
+                aria-hidden
+                key={`duplicate-${index}`}
+                className="h-full ml-2 basis-90 shrink-0 p-1.5 px-1"
+              >
+                <ReviewCard review={review} />
+              </div>
+            ))}
         </div>
       </div>
 
