@@ -1,18 +1,19 @@
+import { useMediaQuery } from "@uidotdev/usehooks";
 import reviews from "../assets/assets";
 import { CarouselControls } from "../minor-components/CarouselControls";
 import ReviewCard from "../minor-components/ReviewCard";
 import { cn } from "../utils/cn";
 import { useEffect, useRef, useState } from "react";
 
-const isTouchDevice = typeof window !== 'undefined' 
-  ? ('ontouchstart' in window || navigator.maxTouchPoints > 0)
-  : false;
-
 const Reviews = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+  const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
   // Handle scroll for touch devices (simple scroll)
+ useEffect(() => {
+  setIsTouchDevice(window.matchMedia("(max-width: 576px) or (pointer: coarse)").matches);
+}, []);
 
   useEffect(() => {
     if (!sliderRef.current || !isTouchDevice) return;

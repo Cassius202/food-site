@@ -36,7 +36,7 @@ const reviews: Review[] = [
     clientImage: clientImage1,
     name: "Emmy Crypto",
     rating: 4.8,
-    reviewText: "Foody never disappoints! The flavors are fresh, creative, and always leave me wanting more.",
+    reviewText: "Foodie never disappoints! The flavors are fresh, creative, and always leave me wanting more.",
     createdAt: "2026-01-30T14:20:00Z" // Yesterday
   },
   {
@@ -52,7 +52,7 @@ const reviews: Review[] = [
     clientImage: clientImage3,
     name: "Maria Lopez",
     rating: 5.0,
-    reviewText: "Absolutely perfect! Foody has become my go-to restaurant for both casual dinners and special occasions.",
+    reviewText: "Absolutely perfect! Foodie has become my go-to restaurant for both casual dinners and special occasions.",
     createdAt: "2026-01-25T18:45:00Z" // Last week
   },
   {
@@ -60,14 +60,14 @@ const reviews: Review[] = [
     clientImage: clientImage4,
     name: "Donna Carter",
     rating: 4.5,
-    reviewText: "Delicious meals with a modern twist. I appreciate how Foody keeps introducing new recipes.",
+    reviewText: "Delicious meals with a modern twist. I appreciate how Foodie keeps introducing new recipes.",
     createdAt: "2026-01-20T11:30:00Z"
   },
   {
     id: "review-5",
     name: "Emily Nguyen", // No image, maybe use a placeholder initial icon in UI
     rating: 4.7,
-    reviewText: "Foody feels like home. The staff is welcoming, and the dishes always surprise me with their creativity.",
+    reviewText: "Foodie feels like home. The staff is welcoming, and the dishes always surprise me with their creativity.",
     createdAt: "2026-01-15T16:10:00Z"
   },
   {
@@ -75,7 +75,7 @@ const reviews: Review[] = [
     clientImage: clientImage6, 
     name: "Michael Brown",
     rating: 4.3,
-    reviewText: "I love how Foody experiments with flavors. Every visit feels like a new culinary adventure.",
+    reviewText: "I love how Foodie experiments with flavors. Every visit feels like a new culinary adventure.",
     createdAt: "2026-01-05T20:00:00Z"
   }
 ];
