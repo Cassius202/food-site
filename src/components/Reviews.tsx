@@ -1,4 +1,3 @@
-import { useMediaQuery } from "@uidotdev/usehooks";
 import reviews from "../assets/assets";
 import { CarouselControls } from "../minor-components/CarouselControls";
 import ReviewCard from "../minor-components/ReviewCard";
@@ -12,7 +11,7 @@ const Reviews = () => {
   const [isTouchDevice, setIsTouchDevice] = useState<boolean>(false);
   // Handle scroll for touch devices (simple scroll)
  useEffect(() => {
-  setIsTouchDevice(window.matchMedia("(max-width: 576px) or (pointer: coarse)").matches);
+  setIsTouchDevice(window.matchMedia("(max-width: 640px)").matches);
 }, []);
 
   useEffect(() => {
@@ -24,7 +23,7 @@ const Reviews = () => {
       left: currentIndex * minWidth,
       behavior: "smooth",
     });
-  }, [currentIndex]);
+  }, [currentIndex, isTouchDevice]);
 
   const handleSlide = (direction: "left" | "right"): void => {
     if (!sliderRef.current) return;
@@ -77,7 +76,7 @@ const Reviews = () => {
               key={index}
               className={cn(
                 "h-full ml-2 basis-90 shrink-0 p-1.5 px-1",
-                isTouchDevice && "px-10 basis-full",
+                isTouchDevice && "ml-0 basis-full px-10 max-[500px]:px-4",
               )}
             >
               <ReviewCard review={review} />

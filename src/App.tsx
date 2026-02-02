@@ -15,7 +15,7 @@ const App = () => {
   // Prop name as requested
   const [btmBarOpen, setBtmBarOpen] = useState(true);
   return (
-    <div className="bg-slate-100 h-screen w-screen relative">
+    <div className="bg-slate-100 overflow-x-hidden h-screen w-screen relative">
       <Toaster />
       <Hamburger btmBarOpen={btmBarOpen} setBtmBarOpen={setBtmBarOpen} />
       <Header />
