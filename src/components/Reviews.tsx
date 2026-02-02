@@ -42,7 +42,7 @@ const Reviews = () => {
   };
 
   return (
-    <div className="section bg-slate-100 min-h-60 w-full">
+    <div id="reviews" className="section bg-slate-100 min-h-60 w-full">
       <span
         className="text-primary font-bold uppercase tracking-widest text-sm mb-2"
         style={{ color: "#F9A01B" }}

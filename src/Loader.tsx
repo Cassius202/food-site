@@ -12,7 +12,7 @@ const Loader = ({ children }: LoaderProps) => {
 
   useEffect(() => {
     const handleComplete = () => {
-      setTimeout(() => setLoading(false), 1000);
+      setTimeout(() => setLoading(false), 3000);
     };
 
     if (document.readyState === 'complete') {
@@ -20,7 +20,7 @@ const Loader = ({ children }: LoaderProps) => {
     } else {
       window.addEventListener('load', handleComplete);
       
-      const timeout = setTimeout(() => setLoading(false), 3000);
+      const timeout = setTimeout(() => setLoading(false), 4000);
       
       return () => {
         window.removeEventListener('load', handleComplete);

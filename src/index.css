@@ -18,6 +18,9 @@
   html {
     scroll-behavior: smooth;
   }
+  body {
+    scroll-behavior: smooth;
+  }
   /* Chrome, Edge, and Safari */
   ::-webkit-scrollbar {
     width: 8px; /* This sets the width */
@@ -41,6 +44,7 @@
   * {
     scrollbar-width: thin; /* Options: auto, thin, none */
     scrollbar-color: theme('colors.zinc.700') transparent;
+    scroll-behavior: smooth;
   }
 }
 
